@@ -1,12 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'AlamofireRSSParser_Example', :exclusive => true do
+target 'AlamofireRSSParser_Example' do
   pod 'AlamofireRSSParser', :path => '../'
 end
 
-target 'AlamofireRSSParser_Tests', :exclusive => true do
-  pod 'AlamofireRSSParser', :path => '../'
-
-  
+target 'AlamofireRSSParser_Tests' do
+  pod 'AlamofireRSSParser', :path => '../'  
 end
