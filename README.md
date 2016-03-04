@@ -1,6 +1,6 @@
 # AlamofireRSSParser
 
-[![CI Status](http://img.shields.io/travis/Don Angelillo/AlamofireRSSParser.svg?style=flat)](https://travis-ci.org/Don Angelillo/AlamofireRSSParser)
+[![CI Status](http://img.shields.io/travis/AdeptusAstartes/AlamofireRSSParser.svg?style=flat)](https://travis-ci.org/AdeptusAstartes/AlamofireRSSParser)
 [![Version](https://img.shields.io/cocoapods/v/AlamofireRSSParser.svg?style=flat)](http://cocoapods.org/pods/AlamofireRSSParser)
 [![License](https://img.shields.io/cocoapods/l/AlamofireRSSParser.svg?style=flat)](http://cocoapods.org/pods/AlamofireRSSParser)
 [![Platform](https://img.shields.io/cocoapods/p/AlamofireRSSParser.svg?style=flat)](http://cocoapods.org/pods/AlamofireRSSParser)
