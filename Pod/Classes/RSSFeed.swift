@@ -25,7 +25,7 @@ public class RSSFeed: CustomStringConvertible {
     var items: [RSSItem] = Array()
     
     public var description: String {
-        return "title: \(self.title)\nfeedDescription: \(self.feedDescription)\nlink: \(self.link)\npubDate: \(self.pubDate)\nlastBuildDate: \(self.lastBuildDate)\nlanguage: \(self.language)\ncopyright: \(self.copyright)\nmanagingEditor: \(self.managingEditor)\nwebMaster: \(self.webMaster)\ngenerator: \(self.generator)\ndocs: \(self.docs)\nttl: \(self.ttl)\n\titems: \(self.items)"
+        return "title: \(self.title)\nfeedDescription: \(self.feedDescription)\nlink: \(self.link)\npubDate: \(self.pubDate)\nlastBuildDate: \(self.lastBuildDate)\nlanguage: \(self.language)\ncopyright: \(self.copyright)\nmanagingEditor: \(self.managingEditor)\nwebMaster: \(self.webMaster)\ngenerator: \(self.generator)\ndocs: \(self.docs)\nttl: \(self.ttl)\nitems: \n\(self.items)"
     }
     
 }

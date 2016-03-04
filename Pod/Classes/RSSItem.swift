@@ -19,6 +19,6 @@ public class RSSItem: CustomStringConvertible {
     var pubDate: NSDate? = nil
 
     public var description: String {
-        return "title: \(self.title)\nlink: \(self.link)\nitemDescription: \(self.itemDescription)\nguid: \(self.guid)\nauthor: \(self.author)\ncomments: \(self.comments)\nsource: \(self.source)\npubDate: \(self.pubDate)"
+        return "\ttitle: \(self.title)\n\tlink: \(self.link)\n\titemDescription: \(self.itemDescription)\n\tguid: \(self.guid)\n\tauthor: \(self.author)\n\tcomments: \(self.comments)\n\tsource: \(self.source)\n\tpubDate: \(self.pubDate)\n\n"
     }
 }
