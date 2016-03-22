@@ -11,10 +11,16 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+Alamofire 3.0.0 or higher
+
 ## Installation
 
+### Cocoapods
 AlamofireRSSParser is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
+
+### Manual
+
 
 ```ruby
 pod "AlamofireRSSParser"
