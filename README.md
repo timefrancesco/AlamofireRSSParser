@@ -19,12 +19,15 @@ Alamofire 3.0.0 or higher
 AlamofireRSSParser is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-### Manual
-
-
 ```ruby
 pod "AlamofireRSSParser"
 ```
+
+Then ```import AlamofireRSSParser``` wherever you're using it.
+
+### Manual
+Alternately you can 
+
 
 ## Author
 
