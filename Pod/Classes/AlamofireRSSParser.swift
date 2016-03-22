@@ -95,9 +95,6 @@ public class AlamofireRSSParser: NSObject, NSXMLParserDelegate {
         if ((elementName == "item") || (elementName == "entry")) {
             self.currentItem = RSSItem()
         }
-        
-        
-        //print(elementName);
     }
     
     public func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
