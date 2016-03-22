@@ -215,13 +215,7 @@ public class AlamofireRSSParser: NSObject, NSXMLParserDelegate {
                     self.feed?.lastBuildDate = date
                 }
             }
-            
-            
-            
         }
-        
-        
-        
     }
     
     public func parser(parser: NSXMLParser, foundCharacters string: String) {

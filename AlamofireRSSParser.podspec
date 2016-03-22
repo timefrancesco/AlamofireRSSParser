@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = "AlamofireRSSParser"
-  s.version          = "0.2.1"
-  s.summary          = "An RSS parser plugin for Alamofire."
+  s.version          = "1.0.0"
+  s.summary          = "An RSS parser response handler for Alamofire"
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
