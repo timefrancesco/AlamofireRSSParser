@@ -14,11 +14,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         //let url = "http://www.blabbermouth.net/feed.rss"
-        let url = "http://feeds.feedburner.com/Metalsucks?format=xml"
+        //let url = "http://feeds.feedburner.com/Metalsucks?format=xml"
+        
+        let url = "http://rss.cnn.com/rss/cnn_topstories.rss"
         
         Alamofire.request(.GET, url).responseRSS() { (response) -> Void in
             if let feed: RSSFeed = response.result.value {
-                print(feed)
+                //do something with your new RSSFeed object!
+                for item in feed.items {
+                    print(item)
+                }
             }
         }
     }

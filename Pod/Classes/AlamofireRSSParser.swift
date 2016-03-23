@@ -100,7 +100,7 @@ public class AlamofireRSSParser: NSObject, NSXMLParserDelegate {
     public func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         //if we're at the item level
         if let currentItem = self.currentItem {
-            if (elementName == "item") {
+            if ((elementName == "item") || (elementName == "entry")) {
                 self.feed?.items.append(currentItem)
                 return
             }
@@ -146,6 +146,22 @@ public class AlamofireRSSParser: NSObject, NSXMLParserDelegate {
                     currentItem.pubDate = date
                 } else if let date = RSSDateFormatter.publishedDateFormatter2().dateFromString(self.currentString) {
                     currentItem.pubDate = date
+                }
+            }
+            
+            if (elementName == "media:thumbnail") {
+                if let attributes = self.currentAttributes {
+                    if let url = attributes["url"] {
+                        currentItem.mediaThumbnail = url
+                    }
+                }
+            }
+            
+            if (elementName == "media:content") {
+                if let attributes = self.currentAttributes {
+                    if let url = attributes["url"] {
+                        currentItem.mediaContent = url
+                    }
                 }
             }
             
