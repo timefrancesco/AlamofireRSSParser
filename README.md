@@ -83,7 +83,7 @@ If you need more elements parsed please file an issue or even better, **please c
 
 Don Angelillo, dangelillo@gmail.com
 
-Inspired by Thibaut LE LEVIER's awesome orginal [Block RSSParser](https://github.com/tibo/BlockRSSParser) AFNetworking Plugin
+Inspired by Thibaut LE LEVIER's awesome orginal [Block RSSParser](https://github.com/tibo/BlockRSSParser) AFNetworking Plugin.
 
 ## License
 
