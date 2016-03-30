@@ -10,6 +10,11 @@ import Foundation
 import Alamofire
 
 extension Request {
+    /**
+        Creates a response serializer that returns an `RSSFeed` object initialized from the response data.
+     
+        - Returns: An RSS response serializer.
+     */
     public static func RSSResponseSerializer() -> ResponseSerializer<RSSFeed, NSError> {
         return ResponseSerializer { request, response, data, error in
             guard error == nil else {
@@ -34,17 +39,32 @@ extension Request {
         }
     }
     
-//    public func responseRSS(parser parser: AlamofireRSSParser?, completionHandler: Response<RSSFeed, NSError> -> Void) -> Self {
-//        return response(responseSerializer: Request.RSSResponseSerializer(parser), completionHandler: completionHandler)
-//    }
     
+    /**
+        Adds a handler to be called once the request has finished.
+        
+        - Parameter completionHandler: A closure to be executed once the request has finished.
+    
+        - Returns: The request.
+    */
     public func responseRSS(completionHandler: Response<RSSFeed, NSError> -> Void) -> Self {
         return response(responseSerializer: Request.RSSResponseSerializer(), completionHandler: completionHandler)
     }
+    
+    //public func responseRSS(parser parser: AlamofireRSSParser?, completionHandler: Response<RSSFeed, NSError> -> Void) -> Self {
+    //  return response(responseSerializer: Request.RSSResponseSerializer(parser), completionHandler: completionHandler)
+    //}
 }
 
 
-
+/**
+    This class does the bulk of the work.  Implements the `NSXMLParserDelegate` protocol.
+    Unfortunately due to this it's also required to implement the `NSObject` protocol.
+    
+    And unfortunately due to that there doesn't seem to be any way to make this class have a valid public initializer,
+    despite it being marked public.  I would love to have it be publicly accessible because I would like to able to pass
+    a custom-created instance of this class with configuration properties set into `responseRSS` (see the commented out overload above)
+*/
 public class AlamofireRSSParser: NSObject, NSXMLParserDelegate {
     var parser: NSXMLParser? = nil
     var feed: RSSFeed? = nil
@@ -77,6 +97,13 @@ public class AlamofireRSSParser: NSObject, NSXMLParserDelegate {
         self.parser?.delegate = self
     }
     
+    
+    /**
+        Kicks off the RSS parsing.
+     
+        - Returns: A tuple containing an `RSSFeed` object if parsing was successful (`nil` otherwise) and
+            an `NSError` object if an error occurred (`nil` otherwise).
+    */
     func parse() -> (feed: RSSFeed?, error: NSError?) {
         self.feed = RSSFeed()
         self.currentItem = nil
@@ -87,6 +114,7 @@ public class AlamofireRSSParser: NSObject, NSXMLParserDelegate {
         return (feed: self.feed, error: self.parseError)
     }
     
+    //MARK: - NSXMLParserDelegate
     public func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         self.currentString = String()
         
@@ -244,6 +272,9 @@ public class AlamofireRSSParser: NSObject, NSXMLParserDelegate {
     }
 }
 
+/**
+    Struct containing various `NSDateFormatter` s
+*/
 struct RSSDateFormatter {
     static func rfc822DateFormatter() -> NSDateFormatter {
         let dateFormatter: NSDateFormatter = NSDateFormatter()

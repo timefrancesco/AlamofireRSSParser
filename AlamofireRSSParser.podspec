@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "AlamofireRSSParser"
-  s.version          = "1.0.1"
+  s.version          = "1.0.2"
   s.summary          = "An RSS parser response handler for Alamofire"
 
 # This description is used to generate tags and improve search results.

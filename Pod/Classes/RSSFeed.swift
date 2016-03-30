@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+    RSS gets deserialized into an instance of `RSSFeed`.  Top-level RSS elements are housed here.
+    
+    Item-level elements are deserialized into `RSSItem` objects and stored in the `items` property.
+*/
 public class RSSFeed: CustomStringConvertible {
     public var title: String? = nil
     public var link: String? = nil

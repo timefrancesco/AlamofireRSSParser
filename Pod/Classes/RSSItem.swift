@@ -8,10 +8,16 @@
 
 import Foundation
 
+/**
+    Item-level elements are deserialized into `RSSItem` objects and stored in the `items` array of an `RSSFeed` instance
+*/
 public class RSSItem: CustomStringConvertible {
     public var title: String? = nil
     public var link: String? = nil
     
+    /**
+        Upon setting this property the `itemDescription` will be scanned for HTML and all image urls will be extracted and stored in `imagesFromDescription`
+     */
     public var itemDescription: String? = nil {
         didSet {
             if let itemDescription = self.itemDescription {
@@ -33,6 +39,14 @@ public class RSSItem: CustomStringConvertible {
         return "\ttitle: \(self.title)\n\tlink: \(self.link)\n\titemDescription: \(self.itemDescription)\n\tguid: \(self.guid)\n\tauthor: \(self.author)\n\tcomments: \(self.comments)\n\tsource: \(self.source)\n\tpubDate: \(self.pubDate)\nmediaThumbnail: \(self.mediaThumbnail)\nmediaContent: \(self.mediaContent)\nimagesFromDescription: \(self.imagesFromDescription)\n\n"
     }
     
+    
+    /**
+        Retrieves all the images (\<img\> tags) from a given String contaning HTML using a regex.
+        
+        - Parameter htmlString: A String containing HTML
+     
+        - Returns: an array of image url Strings ([String])
+     */
     private func imagesFromHTMLString(htmlString: String) -> [String] {
         let htmlNSString = htmlString as NSString;
         var images: [String] = Array();
@@ -53,26 +67,4 @@ public class RSSItem: CustomStringConvertible {
         
         return images;
     }
-    
-    /*
--(NSArray *)imagesFromHTMLString:(NSString *)htmlstr {
-    NSMutableArray *imagesURLStringArray = [[NSMutableArray alloc] init];
-
-    NSError *error;
-
-    NSRegularExpression *regex = [NSRegularExpression
-    regularExpressionWithPattern:@"(https?)\\S*(png|jpg|jpeg|gif)"
-    options:NSRegularExpressionCaseInsensitive
-    error:&error];
-
-    [regex enumerateMatchesInString:htmlstr
-    options:0
-    range:NSMakeRange(0, htmlstr.length)
-    usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
-    [imagesURLStringArray addObject:[htmlstr substringWithRange:result.range]];
-    }];
-
-    return [NSArray arrayWithArray:imagesURLStringArray];
-    }
-    */
 }
