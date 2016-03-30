@@ -9,7 +9,7 @@
 - Xcode 7.2+
 - Alamofire 3.0.0 or higher
 
-**Note:** Version 1.0.1 currently locks the Alamofire dependency at ~> 3.2.1 because for some misguided reason the Alamofire Foundation decided to force us to use Xcode 7.3 in order to use Alamofire 3.3.0.
+**Note:** Version 1.0.1+ currently locks the Alamofire dependency at ~> 3.2.1 because for some misguided reason the Alamofire Foundation decided to force us to use Xcode 7.3 in order to use Alamofire 3.3.0.
 
 ## Installation
 
