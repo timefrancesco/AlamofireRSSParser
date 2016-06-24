@@ -1,7 +1,7 @@
 {
   "name": "AlamofireRSSParser",
-  "version": "0.1.0",
-  "summary": "An RSS parser plugin for Alamofire.",
+  "version": "1.0.3",
+  "summary": "An RSS parser response handler for Alamofire",
   "description": "An RSS parser plugin for Alamofire.  Adds a \"responseRSS()\" responseHandler to Alamofire.",
   "homepage": "https://github.com/AdeptusAstartes/AlamofireRSSParser",
   "license": "MIT",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/AdeptusAstartes/AlamofireRSSParser.git",
-    "tag": "0.1.0"
+    "tag": "1.0.3"
   },
   "platforms": {
     "ios": "8.0"
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "Alamofire": [
-      "> 3.0.0"
+
     ]
   }
 }

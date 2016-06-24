@@ -8,14 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = "AlamofireRSSParser"
-  s.version          = "1.0.2"
+  s.version          = "1.0.3"
   s.summary          = "An RSS parser response handler for Alamofire"
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = "An RSS parser plugin for Alamofire.  Adds a \"responseRSS()\" responseHandler to Alamofire."
   
 
@@ -36,5 +30,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'Alamofire', '~> 3.2.0'
+  s.dependency 'Alamofire'
 end
