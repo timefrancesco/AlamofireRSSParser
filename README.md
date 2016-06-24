@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/AlamofireRSSParser.svg?style=flat)](http://cocoapods.org/pods/AlamofireRSSParser)
 
 ## Requirements
-- Xcode 7.2+
+- Xcode 7.3+
 - Alamofire 3.3.0 or higher
 
 ## Installation
