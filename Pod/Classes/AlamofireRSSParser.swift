@@ -23,7 +23,7 @@ extension Request {
             
             guard let validData = data else {
                 let failureReason = "Data could not be serialized. Input data was nil."
-                let error = Error.errorWithCode(.DataSerializationFailed, failureReason: failureReason)
+                let error = NSError(domain: Error.Domain, code: -6004, userInfo: [NSLocalizedFailureReasonErrorKey: failureReason])
                 return .Failure(error)
             }
             

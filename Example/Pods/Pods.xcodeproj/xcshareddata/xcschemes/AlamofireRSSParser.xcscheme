@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '219DEAD8D37574A09BEBC5D0'
+               BlueprintIdentifier = 'DC57405AC5CB5C00BE4BB9F9'
                BlueprintName = 'AlamofireRSSParser'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'AlamofireRSSParser.framework'>
