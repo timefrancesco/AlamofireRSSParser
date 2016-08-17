@@ -26,17 +26,29 @@ public class RSSItem: CustomStringConvertible {
         }
     }
     
+    /**
+     Upon setting this property the `content` will be scanned for HTML and all image urls will be extracted and stored in `imagesFromContent`
+     */
+    public var content: String? = nil {
+        didSet {
+            if let content = self.content {
+                self.imagesFromContent = self.imagesFromHTMLString(content)
+            }
+        }
+    }
+    
     public var guid: String? = nil
     public var author: String? = nil
     public var comments: String? = nil
     public var source: String? = nil
     public var pubDate: NSDate? = nil
     public var mediaThumbnail: String? = nil;
-    public var mediaContent: String? = nil;
-    public var imagesFromDescription: [String]? = nil;
+    public var mediaContent: String? = nil
+    public var imagesFromDescription: [String]? = nil
+    public var imagesFromContent: [String]? = nil
 
     public var description: String {
-        return "\ttitle: \(self.title)\n\tlink: \(self.link)\n\titemDescription: \(self.itemDescription)\n\tguid: \(self.guid)\n\tauthor: \(self.author)\n\tcomments: \(self.comments)\n\tsource: \(self.source)\n\tpubDate: \(self.pubDate)\nmediaThumbnail: \(self.mediaThumbnail)\nmediaContent: \(self.mediaContent)\nimagesFromDescription: \(self.imagesFromDescription)\n\n"
+        return "\ttitle: \(self.title)\n\tlink: \(self.link)\n\titemDescription: \(self.itemDescription)\n\tguid: \(self.guid)\n\tauthor: \(self.author)\n\tcomments: \(self.comments)\n\tsource: \(self.source)\n\tpubDate: \(self.pubDate)\nmediaThumbnail: \(self.mediaThumbnail)\nmediaContent: \(self.mediaContent)\nimagesFromDescription: \(self.imagesFromDescription)\nimagesFromContent: \(self.imagesFromContent)\n\n"
     }
     
     
