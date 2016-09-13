@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "AlamofireRSSParser"
-  s.version          = "1.0.5"
+  s.version          = "1.0.6"
   s.summary          = "An RSS parser response handler for Alamofire"
   s.description      = "An RSS parser plugin for Alamofire.  Adds a \"responseRSS()\" responseHandler to Alamofire."
   
@@ -30,5 +30,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'Alamofire'
+  s.dependency 'Alamofire', '~> 3.5'
 end
