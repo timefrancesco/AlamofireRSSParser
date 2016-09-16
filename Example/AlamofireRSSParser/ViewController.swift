@@ -13,6 +13,7 @@ import AlamofireRSSParser
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
+        
         //let url = "http://www.blabbermouth.net/feed.rss"
         let url = "http://rss.cnn.com/rss/cnn_topstories.rss"
         

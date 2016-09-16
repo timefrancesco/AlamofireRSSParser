@@ -53,8 +53,6 @@ extension Alamofire.DataRequest {
             responseSerializer: DataRequest.RSSResponseSerializer(),
             completionHandler: completionHandler
         )
-        
-        //return response(responseSerializer: Request.RSSResponseSerializer(), completionHandler: completionHandler)
     }
     
     
