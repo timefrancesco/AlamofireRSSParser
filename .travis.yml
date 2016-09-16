@@ -11,7 +11,7 @@ env:
     - SCHEME="AlamofireRSSParser-Example"    
 
 before_install:
-  #- brew install xctool
+  - brew install xctool
   - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
 
 script:   
