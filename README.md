@@ -81,6 +81,7 @@ Current elements:
 
 - media:content
 - media: thumbnail
+- content: encoded
 
 It also yanks all of the images that may be linked in the `itemDescription` (if it's HTML) and creates a nice array named `imagesFromDescription` that you can use for more image content.
 
