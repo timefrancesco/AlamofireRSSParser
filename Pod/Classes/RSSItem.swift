@@ -49,7 +49,7 @@ open class RSSItem: CustomStringConvertible {
     open var enclosures: [[String: String]]? = nil
     
     open var description: String {
-        return "\ttitle: \(self.title)\n\tlink: \(self.link)\n\titemDescription: \(self.itemDescription)\n\tguid: \(self.guid)\n\tauthor: \(self.author)\n\tcomments: \(self.comments)\n\tsource: \(self.source)\n\tpubDate: \(self.pubDate)\nmediaThumbnail: \(self.mediaThumbnail)\nmediaContent: \(self.mediaContent)\nimagesFromDescription: \(self.imagesFromDescription)\nimagesFromContent: \(self.imagesFromContent)\nenclosures: \(self.enclosures)\n\n"
+        return "\ttitle: \(self.title)\n\tlink: \(self.link)\n\titemDescription: \(self.itemDescription)\n\tguid: \(self.guid)\n\tauthor: \(self.author)\n\tcomments: \(self.comments)\n\tsource: \(self.source)\n\tpubDate: \(self.pubDate)\n\tmediaThumbnail: \(self.mediaThumbnail)\n\tmediaContent: \(self.mediaContent)\n\timagesFromDescription: \(self.imagesFromDescription)\n\timagesFromContent: \(self.imagesFromContent)\n\tenclosures: \(self.enclosures)\n\n"
     }
     
     
