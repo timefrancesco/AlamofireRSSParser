@@ -74,6 +74,7 @@ RSS 2.0 spec elements that it currently parses:
 - comments
 - source
 - pubDate
+- enclosure
 
 In addition, since this is a Swift port of what was originally the backbone of [Heavy Headlines](https://itunes.apple.com/us/app/heavy-headlines-metal-news/id623879550?mt=8) it also parses portions of the [Media RSS Specification 1.5.1](http://www.rssboard.org/media-rss).  
 

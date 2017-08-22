@@ -202,6 +202,12 @@ open class AlamofireRSSParser: NSObject, XMLParserDelegate {
                 }
             }
             
+            if (elementName == "enclosure") {
+                if let attributes = self.currentAttributes {
+                    currentItem.enclosures = (currentItem.enclosures ?? []) + [attributes]
+                }
+            }
+            
             
         //if we're at the top level
         } else {
