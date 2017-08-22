@@ -7,7 +7,7 @@
 
 ## Requirements
 - Xcode 8.0+
-- Swift 3.0+
+- Swift 3.0+, Swift 4.0+
 - Alamofire 4.0+
 
 #### Legacy Swift Support
