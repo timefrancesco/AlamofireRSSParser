@@ -208,6 +208,12 @@ open class AlamofireRSSParser: NSObject, XMLParserDelegate {
                 }
             }
             
+            if (elementName == "category") {
+                if let attributes = self.currentAttributes {
+                    currentItem.categories = (currentItem.categories ?? []) + [attributes]
+                }
+            }
+            
             
         //if we're at the top level
         } else {

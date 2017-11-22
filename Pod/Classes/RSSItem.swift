@@ -43,14 +43,15 @@ open class RSSItem: CustomStringConvertible {
     open var comments: String? = nil
     open var source: String? = nil
     open var pubDate: Date? = nil
-    open var mediaThumbnail: String? = nil;
+    open var mediaThumbnail: String? = nil
     open var mediaContent: String? = nil
     open var imagesFromDescription: [String]? = nil
     open var imagesFromContent: [String]? = nil
     open var enclosures: [[String: String]]? = nil
+    open var categories: [[String: String]]? = nil
     
     open var description: String {
-        return "\ttitle: \(String(describing: self.title))\n\tlink: \(String(describing: self.link))\n\titemDescription: \(String(describing: self.itemDescription))\n\tguid: \(String(describing: self.guid))\n\tauthor: \(String(describing: self.author))\n\tcomments: \(String(describing: self.comments))\n\tsource: \(String(describing: self.source))\n\tpubDate: \(String(describing: self.pubDate))\n\tmediaThumbnail: \(String(describing: self.mediaThumbnail))\n\tmediaContent: \(String(describing: self.mediaContent))\n\timagesFromDescription: \(String(describing: self.imagesFromDescription))\n\timagesFromContent: \(String(describing: self.imagesFromContent))\n\tenclosures: \(String(describing: self.enclosures))\n\n"
+        return "\ttitle: \(String(describing: self.title))\n\tlink: \(String(describing: self.link))\n\titemDescription: \(String(describing: self.itemDescription))\n\tguid: \(String(describing: self.guid))\n\tauthor: \(String(describing: self.author))\n\tcomments: \(String(describing: self.comments))\n\tsource: \(String(describing: self.source))\n\tpubDate: \(String(describing: self.pubDate))\n\tmediaThumbnail: \(String(describing: self.mediaThumbnail))\n\tmediaContent: \(String(describing: self.mediaContent))\n\timagesFromDescription: \(String(describing: self.imagesFromDescription))\n\timagesFromContent: \(String(describing: self.imagesFromContent))\n\tenclosures: \(String(describing: self.enclosures))\n\tcategories: \(String(describing: self.categories))\n\n"
     }
     
     
@@ -68,7 +69,7 @@ open class RSSItem: CustomStringConvertible {
         do {
             let regex = try NSRegularExpression(pattern: "(https?)\\S*(png|jpg|jpeg|gif)", options: [NSRegularExpression.Options.caseInsensitive])
         
-            regex.enumerateMatches(in: htmlString, options: [NSRegularExpression.MatchingOptions.reportProgress], range: NSMakeRange(0, htmlString.characters.count)) { (result, flags, stop) -> Void in
+            regex.enumerateMatches(in: htmlString, options: [NSRegularExpression.MatchingOptions.reportProgress], range: NSMakeRange(0, htmlString.count)) { (result, flags, stop) -> Void in
                 if let range = result?.range {
                     images.append(htmlNSString.substring(with: range))  //because Swift ranges are still completely ridiculous
                 }

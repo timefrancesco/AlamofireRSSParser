@@ -6,13 +6,14 @@
 [![Platform](https://img.shields.io/cocoapods/p/AlamofireRSSParser.svg?style=flat)](http://cocoapods.org/pods/AlamofireRSSParser)
 
 ## Requirements
-- Xcode 8.0+
-- Swift 3.0+, Swift 4.0+
-- Alamofire 4.0+
+- Xcode 9.0+
+- Swift 4.0+
+- Alamofire 4.5+
 
 #### Legacy Swift Support
 _If you need to support an earlier version of Swift, please either download the zip or point your Podfile at the coresponding tag:_
 
+- **Swift 3.x**: tag "2.0.1"
 - **Swift 2.2**: tag "Swift 2.2 Final"
 - **Swift 2.3**: tag "Swift 2.3 Final"
 
@@ -75,6 +76,7 @@ RSS 2.0 spec elements that it currently parses:
 - source
 - pubDate
 - enclosure
+- category
 
 In addition, since this is a Swift port of what was originally the backbone of [Heavy Headlines](https://itunes.apple.com/us/app/heavy-headlines-metal-news/id623879550?mt=8) it also parses portions of the [Media RSS Specification 1.5.1](http://www.rssboard.org/media-rss).  
 
