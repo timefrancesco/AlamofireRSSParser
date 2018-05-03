@@ -150,7 +150,11 @@ open class AlamofireRSSParser: NSObject, XMLParserDelegate {
                 currentItem.content = self.currentString
             }
             
-            if (elementName == "link") {
+            if elementName == "yt:videoId" && !self.currentString.isEmpty {
+                currentItem.link = "https://www.youtube.com/watch?v=" + self.currentString
+            }
+            
+            if (elementName == "link" && currentItem.link == nil) {
                 currentItem.link = self.currentString
             }
             
